@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mì Cay Seoul - BPMN AS-IS Diagram</title>
+  <script src="https://unpkg.com/bpmn-js/dist/bpmn-viewer.development.js"></script>
+  <style>
+    #canvas { 
+      height: 800px; 
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mì Cay Seoul - Tổng hợp Quy trình AS-IS</h1>
+  <div id="canvas"></div>
+
+  <script>
+    const viewer = new BpmnJS({ container: '#canvas' });
+    
+    // BPMN XML cho quy trình tổng hợp
+    const bpmnXML = `<?xml version="1.0" encoding="UTF-8"?>
+    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+                     xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
+                     xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" 
+                     targetNamespace="http://bpmn.io/schema/bpmn">
+      
+      <!-- Process Definition -->
+      <bpmn:process id="Process_MiCaySeoul" isExecutable="false">
+        
+        <!-- Start Event -->
+        <bpmn:startEvent id="StartEvent_1">
+          <bpmn:outgoing>Flow_Start</bpmn:outgoing>
+        </bpmn:startEvent>
+
+        <!-- Customer Arrival -->
+        <bpmn:task id="Task_CustomerArrival" name="Khách đến quán">
+          <bpmn:incoming>Flow_Start</bpmn:incoming>
+          <bpmn:outgoing>Flow_ToMenu</bpmn:outgoing>
+        </bpmn:task>
+
+        <!-- View Menu -->
+        <bpmn:task id="Task_ViewMenu" name="Xem menu & chọn món">
+          <bpmn:incoming>Flow_ToMenu</bpmn:incoming>
+          <bpmn:outgoing>Flow_ToOrder</bpmn:outgoing>
+        </bpmn:task>
+
+        <!-- Order Process -->
+        <bpmn:subProcess id="SubProcess_Order" name="Quy trình Order">
+          <bpmn:incoming>Flow_ToOrder</bpmn:incoming>
+          <bpmn:outgoing>Flow_ToKitchen</bpmn:outgoing>
+          
+          <bpmn:task id="Task_RecordOrder" name="Ghi nhận order"/>
+          <bpmn:task id="Task_InputPOS" name="Nhập vào POS"/>
+          
+        </bpmn:subProcess>
+
+        <!-- Exclusive Gateway for Service Type -->
+        <bpmn:exclusiveGateway id="Gateway_ServiceType" name="Loại hình dịch vụ?">
+          <bpmn:incoming>Flow_ToKitchen</bpmn:incoming>
+          <bpmn:outgoing>Flow_DineIn</bpmn:outgoing>
+          <bpmn:outgoing>Flow_TakeAway</bpmn:outgoing>
+          <bpmn:outgoing>Flow_Delivery</bpmn:outgoing>
+        </bpmn:exclusiveGateway>
+
+        <!-- Dine-in Path -->
+        <bpmn:task id="Task_ServeTable" name="Phục vụ tại bàn">
+          <bpmn:incoming>Flow_DineIn</bpmn:incoming>
+          <bpmn:outgoing>Flow_ToPayment</bpmn:outgoing>
+        </bpmn:task>
+
+        <!-- Take-away Path -->
+        <bpmn:task id="Task_PackTakeaway" name="Đóng gói mang về">
+          <bpmn:incoming>Flow_TakeAway</bpmn:incoming>
+          <bpmn:outgoing>Flow_TakeawayPayment</bpmn:outgoing>
+        </bpmn:task>
+
+        <!-- Delivery Path -->
+        <bpmn:task id="Task_Delivery" name="Giao hàng">
+          <bpmn:incoming>Flow_Delivery</bpmn:incoming>
+          <bpmn:outgoing>Flow_DeliveryComplete</bpmn:outgoing>
+        </bpmn:task>
+
+        <!-- Payment -->
+        <bpmn:task id="Task_Payment" name="Thanh toán">
+          <bpmn:incoming>Flow_ToPayment</bpmn:incoming>
+          <bpmn:incoming>Flow_TakeawayPayment</bpmn:incoming>
+          <bpmn:outgoing>Flow_EndProcess</bpmn:outgoing>
+        </bpmn:task>
+
+        <!-- End Event -->
+        <bpmn:endEvent id="EndEvent_1">
+          <bpmn:incoming>Flow_EndProcess</bpmn:incoming>
+          <bpmn:incoming>Flow_DeliveryComplete</bpmn:incoming>
+        </bpmn:endEvent>
+
+        <!-- Sequence Flows -->
+        <bpmn:sequenceFlow id="Flow_Start" sourceRef="StartEvent_1" targetRef="Task_CustomerArrival"/>
+        <bpmn:sequenceFlow id="Flow_ToMenu" sourceRef="Task_CustomerArrival" targetRef="Task_ViewMenu"/>
+        <bpmn:sequenceFlow id="Flow_ToOrder" sourceRef="Task_ViewMenu" targetRef="SubProcess_Order"/>
+        <bpmn:sequenceFlow id="Flow_ToKitchen" sourceRef="SubProcess_Order" targetRef="Gateway_ServiceType"/>
+        
+        <bpmn:sequenceFlow id="Flow_DineIn" sourceRef="Gateway_ServiceType" targetRef="Task_ServeTable" name="Tại quán"/>
+        <bpmn:sequenceFlow id="Flow_TakeAway" sourceRef="Gateway_ServiceType" targetRef="Task_PackTakeaway" name="Mang về"/>
+        <bpmn:sequenceFlow id="Flow_Delivery" sourceRef="Gateway_ServiceType" targetRef="Task_Delivery" name="Giao hàng"/>
+        
+        <bpmn:sequenceFlow id="Flow_ToPayment" sourceRef="Task_ServeTable" targetRef="Task_Payment"/>
+        <bpmn:sequenceFlow id="Flow_TakeawayPayment" sourceRef="Task_PackTakeaway" targetRef="Task_Payment"/>
+        <bpmn:sequenceFlow id="Flow_DeliveryComplete" sourceRef="Task_Delivery" targetRef="EndEvent_1"/>
+        <bpmn:sequenceFlow id="Flow_EndProcess" sourceRef="Task_Payment" targetRef="EndEvent_1"/>
+
+      </bpmn:process>
+
+      <!-- BPMNDiagram -->
+      <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+        <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_MiCaySeoul">
+          <!-- Add diagram elements positioning here -->
+        </bpmndi:BPMNPlane>
+      </bpmndi:BPMNDiagram>
+
+    </bpmn:definitions>`;
+
+    // Load the diagram
+    viewer.importXML(bpmnXML).then(() => {
+      viewer.get('canvas').zoom('fit-viewport');
+    }).catch(err => {
+      console.error('Error loading BPMN diagram:', err);
+    });
+  </script>
+</body>
+</html>
