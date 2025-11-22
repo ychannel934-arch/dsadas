@@ -1,0 +1,283 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Tổng hợp Quy trình Mì Cay Seoul" id="MiCaySeoul_ASIS">
+    <mxGraphModel dx="1426" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Pool chính -->
+        <mxCell id="pool1" value="Mì Cay Seoul" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1200" height="800" as="geometry"/>
+        </mxCell>
+        
+        <!-- Lanes -->
+        <mxCell id="lane1" value="Khách hàng" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool1">
+          <mxGeometry x="0" y="60" width="1200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="lane2" value="Nhân viên phục vụ" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool1">
+          <mxGeometry x="0" y="180" width="1200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="lane3" value="Nhân viên order" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool1">
+          <mxGeometry x="0" y="300" width="1200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="lane4" value="Bộ phận bếp" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool1">
+          <mxGeometry x="0" y="420" width="1200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="lane5" value="Nhân viên thu ngân" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool1">
+          <mxGeometry x="0" y="540" width="1200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="lane6" value="Quản lý" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool1">
+          <mxGeometry x="0" y="660" width="1200" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Start Event -->
+        <mxCell id="start1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;outlineConnect=0;fontSize=12;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="lane1">
+          <mxGeometry x="40" y="40" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Khách đến quán -->
+        <mxCell id="task1" value="Khách đến quán" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="100" y="35" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Xem menu & chọn món -->
+        <mxCell id="task2" value="Xem menu &amp; chọn món" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="260" y="35" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Ghi nhận order -->
+        <mxCell id="task3" value="Ghi nhận order" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane3">
+          <mxGeometry x="440" y="45" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Nhập vào POS -->
+        <mxCell id="task4" value="Nhập vào POS" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane3">
+          <mxGeometry x="600" y="45" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Gateway phân loại dịch vụ -->
+        <mxCell id="gateway1" value="Loại dịch vụ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane3">
+          <mxGeometry x="740" y="40" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- TẠI QUÁN Path -->
+        <mxCell id="task5" value="Chế biến món ăn" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane4">
+          <mxGeometry x="840" y="45" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task6" value="Phục vụ tại bàn" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="1000" y="45" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- TAKE-AWAY Path -->
+        <mxCell id="task7" value="Chế biến &amp; đóng gói" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane4">
+          <mxGeometry x="840" y="145" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task8" value="Giao món cho khách" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="1020" y="145" width="130" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- DELIVERY Path -->
+        <mxCell id="task9" value="Chế biến &amp; đóng gói" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane4">
+          <mxGeometry x="840" y="245" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task10" value="Bàn giao shipper" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="1020" y="245" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Gateway thanh toán -->
+        <mxCell id="gateway2" value="" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane5">
+          <mxGeometry x="900" y="400" width="50" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Thanh toán -->
+        <mxCell id="task11" value="Thanh toán" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane5">
+          <mxGeometry x="980" y="395" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- End Events -->
+        <mxCell id="end1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;outlineConnect=0;fontSize=12;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="lane1">
+          <mxGeometry x="1120" y="40" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;outlineConnect=0;fontSize=12;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="lane1">
+          <mxGeometry x="1120" y="150" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;outlineConnect=0;fontSize=12;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="lane1">
+          <mxGeometry x="1120" y="250" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- SEQUENCE FLOWS -->
+
+        <!-- Main Flow -->
+        <mxCell id="flow1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="start1" target="task1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task1" target="task2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task2" target="task3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task3" target="task4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task4" target="gateway1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Gateway Flows -->
+        <mxCell id="flow6" value="Tại quán" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="gateway1" target="task5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow7" value="Take-away" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="gateway1" target="task7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow8" value="Delivery" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="gateway1" target="task9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Tại quán flow -->
+        <mxCell id="flow9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task5" target="task6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task6" target="gateway2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="85"/>
+              <mxPoint x="1060" y="425"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Take-away flow -->
+        <mxCell id="flow11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task7" target="task8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task8" target="gateway2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1085" y="185"/>
+              <mxPoint x="1085" y="425"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Delivery flow -->
+        <mxCell id="flow13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task9" target="task10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task10" target="end3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Payment flows -->
+        <mxCell id="flow15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="gateway2" target="task11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task11" target="end1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="415"/>
+              <mxPoint x="1080" y="85"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="flow17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task11" target="end2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="415"/>
+              <mxPoint x="1080" y="195"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Khiếu nại Process (Parallel) -->
+        <mxCell id="task12" value="Khách phản ánh" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="40" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task13" value="Tiếp nhận &amp; xin lỗi" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="200" y="500" width="130" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task14" value="Xác minh sự việc" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane6">
+          <mxGeometry x="370" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="gateway3" value="" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane6">
+          <mxGeometry x="530" y="495" width="50" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task15" value="Đổi món" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane6">
+          <mxGeometry x="620" y="480" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task16" value="Giảm giá" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane6">
+          <mxGeometry x="620" y="530" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task17" value="Ghi nhận phản hồi" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="lane6">
+          <mxGeometry x="740" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end4" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;outlineConnect=0;fontSize=12;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="lane1">
+          <mxGeometry x="900" y="505" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Complaint flows -->
+        <mxCell id="flow18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task12" target="task13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task13" target="task14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task14" target="gateway3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="gateway3" target="task15">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="gateway3" target="task16">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task15" target="task17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task16" target="task17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="task17" target="end4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
