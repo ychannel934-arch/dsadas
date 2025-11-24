@@ -1,5 +1,5 @@
 <mxfile>
-  <diagram name="BPMN AS-IS - Mì Cay Seoul" id="as-is-simple">
+  <diagram name="BPMN AS-IS với mũi tên" id="as-is-with-arrows">
     <mxGraphModel dx="1426" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
       <root>
         <mxCell id="0"/>
@@ -35,7 +35,9 @@
           <mxGeometry x="10" y="490" width="1080" height="80" as="geometry"/>
         </mxCell>
 
+        <!-- ==================== -->
         <!-- LANE 1: KHÁCH HÀNG -->
+        <!-- ==================== -->
         <mxCell id="start1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="lane1">
           <mxGeometry x="30" y="30" width="30" height="30" as="geometry"/>
         </mxCell>
@@ -52,7 +54,23 @@
           <mxGeometry x="380" y="25" width="80" height="40" as="geometry"/>
         </mxCell>
 
+        <!-- MŨI TÊN LANE 1 -->
+        <mxCell id="flow1_1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane1" source="start1" target="task1_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow1_2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane1" source="task1_1" target="task1_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow1_3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane1" source="task1_2" target="task1_3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow1_4" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane1" source="task1_3" target="task1_4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== -->
         <!-- LANE 2: PHỤC VỤ -->
+        <!-- ==================== -->
         <mxCell id="task2_1" value="Chào đón" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lane2">
           <mxGeometry x="80" y="20" width="80" height="40" as="geometry"/>
         </mxCell>
@@ -63,7 +81,17 @@
           <mxGeometry x="280" y="20" width="80" height="40" as="geometry"/>
         </mxCell>
 
+        <!-- MŨI TÊN LANE 2 -->
+        <mxCell id="flow2_1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane2" source="task2_1" target="task2_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow2_2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane2" source="task2_2" target="task2_3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== -->
         <!-- LANE 3: ORDER -->
+        <!-- ==================== -->
         <mxCell id="task3_1" value="Nhận order" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lane3">
           <mxGeometry x="80" y="20" width="80" height="40" as="geometry"/>
         </mxCell>
@@ -74,7 +102,17 @@
           <mxGeometry x="280" y="20" width="80" height="40" as="geometry"/>
         </mxCell>
 
+        <!-- MŨI TÊN LANE 3 -->
+        <mxCell id="flow3_1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane3" source="task3_1" target="task3_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow3_2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane3" source="task3_2" target="task3_3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== -->
         <!-- LANE 4: BẾP -->
+        <!-- ==================== -->
         <mxCell id="task4_1" value="Nhận order" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lane4">
           <mxGeometry x="80" y="30" width="80" height="40" as="geometry"/>
         </mxCell>
@@ -88,7 +126,20 @@
           <mxGeometry x="340" y="30" width="80" height="40" as="geometry"/>
         </mxCell>
 
+        <!-- MŨI TÊN LANE 4 -->
+        <mxCell id="flow4_1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane4" source="task4_1" target="gateway1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow4_2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane4" source="gateway1" target="task4_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow4_3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane4" source="task4_2" target="task4_3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== -->
         <!-- LANE 5: THU NGÂN -->
+        <!-- ==================== -->
         <mxCell id="task5_1" value="Tính tiền" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lane5">
           <mxGeometry x="80" y="20" width="80" height="40" as="geometry"/>
         </mxCell>
@@ -99,7 +150,17 @@
           <mxGeometry x="280" y="25" width="30" height="30" as="geometry"/>
         </mxCell>
 
+        <!-- MŨI TÊN LANE 5 -->
+        <mxCell id="flow5_1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane5" source="task5_1" target="task5_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow5_2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane5" source="task5_2" target="end1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== -->
         <!-- LANE 6: QUẢN LÝ -->
+        <!-- ==================== -->
         <mxCell id="start2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="lane6">
           <mxGeometry x="30" y="25" width="30" height="30" as="geometry"/>
         </mxCell>
@@ -120,6 +181,60 @@
         </mxCell>
         <mxCell id="end3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;" vertex="1" parent="lane6">
           <mxGeometry x="330" y="60" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- MŨI TÊN LANE 6 -->
+        <mxCell id="flow6_1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane6" source="start2" target="task6_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow6_2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane6" source="task6_1" target="gateway2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow6_3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane6" source="gateway2" target="task6_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow6_4" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane6" source="task6_2" target="end2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow6_5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lane6" source="gateway2" target="task6_3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow6_6" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lane6" source="task6_3" target="end3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== -->
+        <!-- MESSAGE FLOWS GIỮA CÁC LANE -->
+        <!-- ==================== -->
+        
+        <!-- Từ Khách hàng "Gọi món" đến Phục vụ "Ghi order" -->
+        <mxCell id="msg1" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task1_2" target="task2_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Từ Phục vụ "Ghi order" đến Order "Nhận order" -->
+        <mxCell id="msg2" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task2_2" target="task3_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Từ Order "Chuyển bếp" đến Bếp "Nhận order" -->
+        <mxCell id="msg3" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task3_3" target="task4_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Từ Bếp "Bàn giao" đến Phục vụ "Mang món" -->
+        <mxCell id="msg4" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task4_3" target="task2_3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Từ Khách hàng "Yêu cầu TT" đến Thu ngân "Tính tiền" -->
+        <mxCell id="msg5" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task1_4" target="task5_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Từ Bếp "Thiếu NL" đến Quản lý (Start) -->
+        <mxCell id="msg6" value="Thiếu NL" style="endArrow=classic;html=1;rounded=0;dashed=1;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gateway1" target="start2">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
       </root>
