@@ -1,1 +1,70 @@
+<mxfile>
+  <diagram name="BPMN AS-IS - Mì Cay Seoul" id="abc123">
+    <mxGraphModel dx="1426" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Pool chính -->
+        <mxCell id="pool" value="Mì Cay Seoul" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="1200" height="800" as="geometry"/>
+        </mxCell>
 
+        <!-- Các Lane -->
+        <mxCell id="lane1" value="Khách Hàng" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool">
+          <mxGeometry x="10" y="60" width="1180" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane2" value="Nhân Viên Phục Vụ" style="swimlane;whiteWhiteSpace=wrap;html=1;" vertex="1" parent="pool">
+          <mxGeometry x="10" y="180" width="1180" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane3" value="Nhân Viên Order" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool">
+          <mxGeometry x="10" y="300" width="1180" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane4" value="Bộ Phận Bếp" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool">
+          <mxGeometry x="10" y="420" width="1180" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane5" value="Nhân Viên Thu Ngân" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool">
+          <mxGeometry x="10" y="570" width="1180" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane6" value="Quản Lý" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="pool">
+          <mxGeometry x="10" y="690" width="1180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Start Events -->
+        <mxCell id="start1" value="Khách đến quán" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="40" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="start2" value="Khách đặt online" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="lane1">
+          <mxGeometry x="20" y="80" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Tasks cho Khách Hàng -->
+        <mxCell id="task1" value="Chọn món từ menu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="lane1">
+          <mxGeometry x="80" y="40" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="task2" value="Gọi order" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="lane1">
+          <mxGeometry x="220" y="40" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Sequence Flows -->
+        <mxCell id="flow1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="lane1" source="start1" target="task1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flow2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="lane1" source="task1" target="task2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Thêm các tasks và flows khác tại đây -->
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
